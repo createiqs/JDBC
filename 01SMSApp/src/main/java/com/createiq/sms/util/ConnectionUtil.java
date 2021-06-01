@@ -1,23 +1,36 @@
 package com.createiq.sms.util;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class ConnectionUtil {
 	private static Connection connection = null;
+	private static Properties properties = null;
 
 	public static Connection openConnection() {
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hr", "root", "root");
-			System.out.println(connection);
-		} catch (ClassNotFoundException e) {
+			properties = new Properties();
+			properties.load(ConnectionUtil.class.getClassLoader()
+					.getResourceAsStream("com/createiq/sms/dbproperties/db.properties"));
+			Class.forName(properties.getProperty("driver"));
+			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
+					properties.getProperty("pwd"));
+
+//			System.out.println(connection);
+		} catch (
+
+		ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -63,7 +76,7 @@ public class ConnectionUtil {
 
 	public static void main(String[] args) {
 
-//		openConnection();
+		System.out.println(openConnection());
 
 	}
 

@@ -5,9 +5,15 @@ import java.util.List;
 import com.createiq.sms.model.Student;
 
 public interface StudentDao {
- 
-	public void save();
-	
+
+	// hiding the internal implementation
+
+	void save();
+
+	void update();
+
+	void delete();
+
 	List<Student> findAll();
 
 }
