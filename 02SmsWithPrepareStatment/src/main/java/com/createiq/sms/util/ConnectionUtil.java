@@ -16,8 +16,7 @@ public class ConnectionUtil {
 
 		try {
 			properties = new Properties();
-			properties.load(ConnectionUtil.class.getClassLoader()
-					.getResourceAsStream("db.properties"));
+			properties.load(ConnectionUtil.class.getClassLoader().getResourceAsStream("db.properties"));
 			Class.forName(properties.getProperty("driver"));
 			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
 					properties.getProperty("pwd"));
@@ -30,7 +29,6 @@ public class ConnectionUtil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -69,14 +67,13 @@ public class ConnectionUtil {
 				rs.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	public static void main(String[] args) {
 
-		System.out.println(openConnection());
+//		System.out.println(openConnection());
 
 	}
 

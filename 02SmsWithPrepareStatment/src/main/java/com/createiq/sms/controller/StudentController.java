@@ -8,9 +8,9 @@ import com.createiq.sms.service.StudentServiceImpl;
 
 public class StudentController {
 
-	//
+	//jsp servlets,theymleaf, spring mvc, angulor
 	public static void main(String[] args) {
-		//
+		// tight coupling
 		StudentServiceImpl service = new StudentServiceImpl();
 		Student student = new Student(200, "balaji", 22000.00d, "balaji@gmail.com");
 		service.createStudent(student);
