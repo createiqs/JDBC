@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.createiq.sms.exception.StudentNotFoundException;
 import com.createiq.sms.model.Student;
 import com.createiq.sms.queries.SqlQueries;
 import com.createiq.sms.util.ConnectionUtil;
@@ -50,11 +51,17 @@ public class StudentDaoImpl implements StudentDao {
 			ConnectionUtil.closeConnection(connection, ps);
 		}
 
-
 	}
 
 	public void delete(int id) {
-		 
+		if (id == 0) {
+			try {
+				throw new StudentNotFoundException();
+			} catch (StudentNotFoundException e) {
+				System.out.println("no " + id);
+			}
+		}
+
 	}
 
 	public List<Student> findAll() {
@@ -80,6 +87,16 @@ public class StudentDaoImpl implements StudentDao {
 
 		return students;
 
+	}
+
+	public Student findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Student findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

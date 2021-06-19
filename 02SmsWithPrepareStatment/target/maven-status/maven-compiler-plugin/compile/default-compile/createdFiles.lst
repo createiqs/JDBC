@@ -1,8 +1,8 @@
+com\createiq\sms\service\StudentService.class
+com\createiq\sms\dao\StudentDaoImpl.class
 com\createiq\sms\model\Student.class
 com\createiq\sms\service\StudentServiceImpl.class
 com\createiq\sms\util\ConnectionUtil.class
-com\createiq\sms\service\StudentService.class
-com\createiq\sms\dao\StudentDaoImpl.class
 com\createiq\sms\controller\StudentController.class
 com\createiq\sms\queries\SqlQueries.class
 com\createiq\sms\dao\StudentDao.class
