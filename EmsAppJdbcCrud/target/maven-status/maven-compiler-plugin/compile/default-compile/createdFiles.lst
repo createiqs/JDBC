@@ -1,0 +1,6 @@
+com\createiq\ems\util\ConnectionUtil.class
+com\createiq\ems\client\EmployeeClientTest.class
+com\creatieiq\ems\dao\EmployeeDao.class
+com\createiq\ems\queries\EmployeeQueries.class
+com\creatieiq\ems\dao\EmployeeDaoImpl.class
+com\creatieiq\ems\model\Employee.class

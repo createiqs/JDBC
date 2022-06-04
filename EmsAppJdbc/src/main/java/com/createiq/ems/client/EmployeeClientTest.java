@@ -6,11 +6,13 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.creatieiq.ems.dao.EmployeeDaoImpl;
 import com.creatieiq.ems.model.Employee;
 
 public class EmployeeClientTest {
-
+	private static Logger LOGGER = Logger.getLogger(EmployeeClientTest.class);
 	public static void main(String[] args) throws ParseException {
 //		String dateFormat = "2016/08/25";
 //		Date doj = new SimpleDateFormat("yyyy/dd/mm").parse(dateFormat);
@@ -22,11 +24,12 @@ public class EmployeeClientTest {
 //			System.out.println(employee);
 //		}
 //		dao.update(employee);
-//		Employee employee = dao.getById(1000);
+		Employee employee = dao.getById(1000);
 //		System.out.println(employee);
+		LOGGER.info("employee details "+ employee);
 
-		Employee byName = dao.getByName("virat");
-		System.out.println(byName);
+//		Employee byName = dao.getByName("virat");
+//		System.out.println(byName);
 	}
 
 }
