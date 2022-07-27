@@ -15,7 +15,7 @@ public class ConnectionUtil {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sms_db", "createiq", "root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/spring_jdbc_db", "createiq", "root");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
